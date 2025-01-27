@@ -1,203 +1,258 @@
-// script.js
-const questions = [
-    {
-        question: "What is the index of the first element in an array?",
-        options: ["1", "0", "Depends on the array", "-1"],
-        answer: 1
-    },
-    {
-        question: "Which method adds one or more elements to the end of an array?",
-        options: ["push", "pop", "unshift", "shift"],
-        answer: 0
-    },
-    {
-        question: "What does the length property of an array represent?",
-        options: ["The number of elements in the array", "The last index of the array", "The type of the array", "None of the above"],
-        answer: 0
-    },
-    {
-        question: "How can you remove the first element of an array?",
-        options: ["shift", "unshift", "splice", "pop"],
-        answer: 0
-    },
-    {
-        question: "What does array.slice(1, 3) do?",
-        options: ["Modifies the array", "Returns a shallow copy of a portion of the array", "Removes the first 3 elements", "Returns the first 3 elements"],
-        answer: 1
-    },
-    {
-        question: "How can you combine two arrays into one?",
-        options: ["concat", "join", "push", "merge"],
-        answer: 0
-    },
-    {
-        question: "Which method splits a string into an array?",
-        options: ["join", "split", "slice", "map"],
-        answer: 1
-    },
-    {
-        question: "What is the output of ['hello', 'world'][0][1]?",
-        options: ["h", "e", "w", "o"],
-        answer: 1
-    },
-    {
-        question: "What does the `pop` method do?",
-        options: [
-            "Adds elements to the start of an array",
-            "Removes the last element from an array",
-            "Combines two arrays into one",
-            "Sorts the elements of an array"
-        ],
-        answer: 1
-    },
-    {
-        question: "What does the `splice` method allow you to do?",
-        options: [
-            "Extract a portion of an array",
-            "Add, remove, or replace elements in an array",
-            "Find the index of an element",
-            "Split a string into an array"
-        ],
-        answer: 1
-    },
-    {
-        question: "Which method would you use to add elements to the start of an array?",
-        options: ["unshift", "shift", "push", "pop"],
-        answer: 0
-    },
-    {
-        question: "What is the output of ['apple', 'banana', 'cherry'].length?",
-        options: ["0", "2", "3", "4"],
-        answer: 2
-    },
-    {
-        question: "How can you find the first index of a specific element in an array?",
-        options: ["indexOf", "findIndex", "includes", "filter"],
-        answer: 0
-    },
-    {
-        question: "Which method creates a new array with the results of calling a function on every element?",
-        options: ["map", "filter", "reduce", "forEach"],
-        answer: 0
-    },
-    {
-        question: "What does `reduce` do in JavaScript?",
-        options: [
-            "Filters elements based on a condition",
-            "Combines array elements into a single value",
-            "Sorts elements alphabetically",
-            "Finds the maximum value in an array"
-        ],
-        answer: 1
-    },
-    {
-        question: "Which method checks if an array includes a specific value?",
-        options: ["includes", "some", "every", "find"],
-        answer: 0
-    },
-    {
-        question: "How can you create a copy of an array without modifying the original?",
-        options: ["slice", "splice", "concat", "split"],
-        answer: 0
-    },
-    {
-        question: "What is the difference between `forEach` and `map`?",
-        options: [
-            "forEach creates a new array, while map modifies the original",
-            "forEach modifies the original array, while map creates a new array",
-            "forEach returns undefined, while map returns a new array",
-            "forEach is only for objects, while map is for arrays"
-        ],
-        answer: 2
-    },
-    {
-        question: "What is the output of ['a', 'b', 'c'].join('-')?",
-        options: ["'abc'", "'a-b-c'", "'a, b, c'", "'-'"],
-        answer: 1
-    },
-    {
-        question: "How can you reverse the elements in an array?",
-        options: ["reverse", "sort", "splice", "concat"],
-        answer: 0
+document.addEventListener("DOMContentLoaded", () => {
+    const questions = [
+        {
+          question: "What is the correct way to create an array in JavaScript?",
+          choices: ["let arr = '1, 2, 3'", "let arr = [1, 2, 3]", "let arr = {1, 2, 3}", "let arr = (1, 2, 3)"],
+          correct: 1,
+        },
+        {
+          question: "What is the index of the first element in an array?",
+          choices: ["1", "0", "-1", "Depends on the array"],
+          correct: 1,
+        },
+        {
+          question: "Which property is used to determine the number of elements in an array?",
+          choices: ["length", "size", "count", "elements"],
+          correct: 0,
+        },
+        {
+          question: "Which method adds elements to the end of an array?",
+          choices: ["push()", "pop()", "shift()", "unshift()"],
+          correct: 0,
+        },
+        {
+          question: "What does the pop() method do?",
+          choices: [
+            "Adds elements to the end of an array",
+            "Removes the first element of an array",
+            "Removes the last element of an array",
+            "Removes all elements from an array",
+          ],
+          correct: 2,
+        },
+        {
+          question: "How do you access the last element of an array named 'arr'?",
+          choices: ["arr[arr.length - 1]", "arr[-1]", "arr.last()", "arr[arr.length]"],
+          correct: 0,
+        },
+        {
+          question: "What is the output of the following code: `let arr = [1, 2, 3]; arr[1] = 5; console.log(arr);`?",
+          choices: ["[1, 2, 3]", "[1, 5, 3]", "[1, 2, 5]", "[5, 2, 3]"],
+          correct: 1,
+        },
+        {
+          question: "What does the slice() method do?",
+          choices: [
+            "Extracts a section of an array into a new array",
+            "Removes elements from an array",
+            "Sorts the elements of an array",
+            "Joins all elements into a string",
+          ],
+          correct: 0,
+        },
+        {
+          question: "What does the splice() method do?",
+          choices: [
+            "Joins elements into a string",
+            "Changes contents of an array by adding/removing elements",
+            "Extracts a section of an array into a new array",
+            "Combines two or more arrays",
+          ],
+          correct: 1,
+        },
+        {
+          question: "How would you iterate over an array with index values?",
+          choices: [
+            "Using a for...of loop",
+            "Using a for loop",
+            "Using a while loop",
+            "Using array.forEach()",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Which of the following is a valid for loop syntax?",
+          choices: [
+            "for (let i = 0, i < 5, i++)",
+            "for i = 0; i < 5; i++",
+            "for (let i = 0; i < 5; i++)",
+            "for (i < 5; i++; let i = 0)",
+          ],
+          correct: 2,
+        },
+        {
+          question: "What does the 'break' statement do in a loop?",
+          choices: [
+            "Stops the loop and executes the next iteration",
+            "Exits the loop entirely",
+            "Skips to the next iteration",
+            "Restarts the loop",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Which method combines two arrays without modifying the original arrays?",
+          choices: ["concat()", "push()", "splice()", "unshift()"],
+          correct: 0,
+        },
+        {
+          question: "How do you embed a variable in a template literal?",
+          choices: ["${variable}", "{variable}", "%variable%", "&variable"],
+          correct: 0,
+        },
+        {
+          question: "What does the split() method do?",
+          choices: [
+            "Joins array elements into a string",
+            "Splits a string into an array",
+            "Divides an array into parts",
+            "Sorts the elements of a string",
+          ],
+          correct: 1,
+        },
+        {
+          question: "What is the output of `console.log(`${2 + 3}`);`?",
+          choices: ["23", "5", "undefined", "NaN"],
+          correct: 1,
+        },
+        {
+          question: "Which loop is best for iterating over the characters of a string?",
+          choices: ["for...of", "for", "while", "do...while"],
+          correct: 0,
+        },
+        {
+          question: "What is the result of `['a', 'b'].join('-')`?",
+          choices: ["a-b", "a,b", "['a', 'b']", "undefined"],
+          correct: 0,
+        },
+        {
+          question: "Which operator is used for incrementing a value by 1?",
+          choices: ["++", "+=", "+1", "add()"],
+          correct: 0,
+        },
+        {
+          question: "How do you count the vowels in a string using a loop?",
+          choices: [
+            "Check each character using includes()",
+            "Check each character using indexOf()",
+            "Use a regular expression",
+            "All of the above",
+          ],
+          correct: 3,
+        },
+      ];
+      
+  
+    let currentQuestion = 0;
+    let score = 0;
+    let timer;
+    let timeLeft = 30;
+  
+    const startButton = document.getElementById("start-btn");
+    const restartButton = document.getElementById("restart-btn");
+    const questionBox = document.getElementById("question-box");
+    const finalScoreScreen = document.getElementById("final-score-screen");
+    const questionElement = document.getElementById("question");
+    const answersElement = document.getElementById("answers");
+    const scoreElement = document.getElementById("score");
+    const timerElement = document.getElementById("timer");
+    const finalScoreElement = document.getElementById("final-score");
+    const correctSound = new Audio("rightAnswer.mp3");
+    const incorrectSound = new Audio("wrongAnswer.mp3");
+
+    // Utility functions for visibility
+    function hideElement(element) {
+      element.style.display = "none";
     }
-    // Add the rest of the questions here...
-];
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-const startScreen = document.getElementById("start-screen");
-const quizScreen = document.getElementById("quiz-screen");
-const scoreScreen = document.getElementById("score-screen");
-const questionElement = document.getElementById("question");
-const optionsElement = document.getElementById("options");
-const nextButton = document.getElementById("next-button");
-const scoreElement = document.getElementById("score");
-const startButton = document.getElementById("start-button");
-const restartButton = document.getElementById("restart-button");
-
-startButton.addEventListener("click", startQuiz);
-nextButton.addEventListener("click", handleNextQuestion);
-restartButton.addEventListener("click", restartQuiz);
-
-function startQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
-    startScreen.classList.remove("active");
-    quizScreen.classList.add("active");
-    showQuestion();
-}
-
-function showQuestion() {
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
-    optionsElement.innerHTML = "";
-    nextButton.disabled = true;
-
-    currentQuestion.options.forEach((option, index) => {
+  
+    function showElement(element) {
+      element.style.display = "block";
+    }
+  
+    function startGame() {
+      score = 0;
+      currentQuestion = 0;
+      timeLeft = 30;
+      scoreElement.textContent = score;
+  
+      // Hide start button and final score screen
+      hideElement(startButton);
+      hideElement(finalScoreScreen);
+      showElement(questionBox);
+  
+      showQuestion();
+    }
+  
+    function showQuestion() {
+      if (currentQuestion >= questions.length) {
+        return endGame();
+      }
+  
+      const questionData = questions[currentQuestion];
+      questionElement.textContent = questionData.question;
+      answersElement.innerHTML = "";
+  
+      questionData.choices.forEach((choice, index) => {
         const button = document.createElement("button");
-        button.textContent = option;
-        button.addEventListener("click", () => handleAnswer(index));
-        optionsElement.appendChild(button);
-    });
-}
-
-function handleAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const buttons = optionsElement.querySelectorAll("button");
-
-    buttons.forEach((button, index) => {
-        if (index === currentQuestion.answer) {
-            button.style.backgroundColor = "green";
-        } else if (index === selectedIndex) {
-            button.style.backgroundColor = "red";
-        }
-        button.disabled = true;
-    });
-
-    if (selectedIndex === currentQuestion.answer) {
+        button.textContent = choice;
+        button.classList.add("answer-btn");
+        button.dataset.choice = index;
+        button.addEventListener("click", checkAnswer);
+        answersElement.appendChild(button);
+      });
+  
+      timeLeft = 30;
+      timerElement.textContent = timeLeft;
+      clearInterval(timer);
+      timer = setInterval(countdown, 1000);
+    }
+  
+    function checkAnswer(event) {
+      const selectedChoice = parseInt(event.target.dataset.choice);
+      const correctChoice = questions[currentQuestion].correct;
+  
+      if (selectedChoice === correctChoice) {
         score++;
-    }
-
-    nextButton.disabled = false;
-}
-
-function handleNextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
+        scoreElement.textContent = score;
+        event.target.classList.add("correct");
+        event.target.style.backgroundColor = "#4CAF50"; // Green for correct
+        correctSound.play(); // Play correct answer sound
+      } else {
+        event.target.classList.add("incorrect");
+        event.target.style.backgroundColor = "#F44336"; // Red for incorrect
+        incorrectSound.play(); // Play incorrect answer sound
+      }
+  
+      setTimeout(() => {
+        currentQuestion++;
         showQuestion();
-    } else {
-        endQuiz();
+      }, 1000);
     }
-}
-
-function endQuiz() {
-    quizScreen.classList.remove("active");
-    scoreScreen.classList.add("active");
-    scoreElement.textContent = `You scored ${score} out of ${questions.length}!`;
-}
-
-function restartQuiz() {
-    scoreScreen.classList.remove("active");
-    startScreen.classList.add("active");
-}
+  
+    function countdown() {
+      timeLeft--;
+      timerElement.textContent = timeLeft;
+  
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        currentQuestion++;
+        showQuestion();
+      }
+    }
+  
+    function endGame() {
+      clearInterval(timer);
+  
+      // Hide question box and show final score screen
+      hideElement(questionBox);
+      showElement(finalScoreScreen);
+      finalScoreElement.textContent = score;
+    }
+  
+    restartButton.addEventListener("click", () => {
+      startGame();
+    });
+  
+    startButton.addEventListener("click", startGame);
+  });
+  
